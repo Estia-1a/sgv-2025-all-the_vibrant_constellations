@@ -20,8 +20,8 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-h1, h2 {
-    color: #1b5e20; /* Vert foncé pour les titres */
+h1{
+    color: #f4f8f4; /* Vert foncé pour les titres */
 }
 a {
     color: #388e3c;
