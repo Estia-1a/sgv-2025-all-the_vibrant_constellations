@@ -1,12 +1,30 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f8f4; /* Vert très clair pour la douceur */
     color: #333;
 }
 header, footer {
-    background-color: #004080;
+    background-color: #2e7d32; /* Vert profond et élégant */
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 1.2em;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+main {
+    padding: 2em;
+    max-width: 900px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2 {
+    color: #1b5e20; /* Vert foncé pour les titres */
+}
+a {
+    color: #388e3c;
+    text-decoration: none;
+    font-weight: bold;
 }
