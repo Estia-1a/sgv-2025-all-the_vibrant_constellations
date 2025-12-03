@@ -16,6 +16,15 @@ html, body {
     background-color: whitesmoke;
 }
 
+article{
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.image-logo{
+      width: 100px;                 /* Taille de l'image */
+     height: 100px;
+}
 
 .image-button {
     display: flex;               /* Aligne image et texte */
