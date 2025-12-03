@@ -1,9 +1,9 @@
 h1{
   font-size: 48px;
-  color: #1b6b03;
+  color: #fbfff9;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background: linear-gradient(90deg, hsl(123, 100%, 13%), #5d0000);
   padding: 20px;
   border-radius: 10px;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
