@@ -22,8 +22,8 @@ article{
 }
 
 .image-logo{
-      width: 100px;                 /* Taille de l'image */
-     height: 100px;
+      width: 20em;                 /* Taille de l'image */
+     height: 20em;
 }
 
 .image-button {
@@ -41,6 +41,6 @@ article{
 }
 
 .image-button img {
-    width: 24px;                 /* Taille de l'image */
-    height: 24px;
+    width: 2em;                 /* Taille de l'image */
+    height: 2em;
 }
