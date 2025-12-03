@@ -1,10 +1,10 @@
 h1{
-  font-size: 20px;
-  color: #fbfff9;
+  font-size: 40px;
+  color: whitesmoke;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(90deg, hsl(123, 100%, 20%), #980000);
-  padding: 15px;
+  padding: 30px;
   margin-top: 0;
 }
 
@@ -13,4 +13,22 @@ html, body {
     margin: 0;              /* Supprime les marges par défaut */
     padding: 0;             /* Supprime les espacements internes */
     background-color: whitesmoke;
+}
+
+
+.image-button {
+    display: flex;               /* Aligne image et texte */
+    align-items: center;         /* Centre verticalement */
+    gap: 5px;                   /* Espace entre image et texte */
+    padding: 20px 20px;
+    color: rgb(8, 1, 1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.image-button img {
+    width: 24px;                 /* Taille de l'image */
+    height: 24px;
 }
