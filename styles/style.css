@@ -56,3 +56,16 @@ article{
 .Fin{
   padding: 5px;
 }
+
+.button{
+          font-size: 18px;
+          padding: 10px 20px;
+          background-color: whitesmoke;
+          color: white;
+          border:black;
+          border-radius: 5px;
+          cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
