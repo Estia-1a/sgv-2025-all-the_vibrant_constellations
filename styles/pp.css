@@ -6,6 +6,7 @@ h1{
   background: linear-gradient(90deg, hsl(123, 100%, 20%), #980000);
   padding: 30px;
   margin-top: 0;
+  margin-bottom: auto;
 }
 
 html, body {
@@ -26,6 +27,8 @@ html, body {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    background: none;
+    ;
 }
 
 .image-button img {
