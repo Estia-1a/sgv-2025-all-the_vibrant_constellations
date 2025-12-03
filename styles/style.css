@@ -1,48 +1,87 @@
-h1{
-  font-size: 40px;
-  color: whitesmoke;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(90deg, hsl(123, 100%, 20%), #980000);
-  padding: 30px;
-  margin-top: 0;
-  margin-bottom: auto;
-}
-
 html, body {
-    height: 100%;           /* Prend toute la hauteur de la fenêtre */
-    margin: 0;              /* Supprime les marges par défaut */
-    padding: 0;             /* Supprime les espacements internes */
-    background-color: whitesmoke;
-}
-
-article{
-  text-align: center;
+  height: 100%;           /* Prend toute la hauteur de la fenêtre */
+  margin: 0;              /* Supprime les marges par défaut */
+  padding: 0;             /* Supprime les espacements internes */
   background-color: whitesmoke;
 }
 
+article{
+text-align: center;
+background-color: whitesmoke;
+}
+
 .image-logo{
-      width: 20em;                 /* Taille de l'image */
-     height: 20em;
+    width: 20em;                 /* Taille de l'image */
+   height: 20em;
 }
 
 .image-button {
-    display: flex;               /* Aligne image et texte */
-    align-items: center;         /* Centre verticalement */
-    gap: 5px;                   /* Espace entre image et texte */
-    padding: 20px 20px;
-    color: rgb(8, 1, 1);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    background: none;
-    ;
+  display: flex;               /* Aligne image et texte */
+  align-items: center;         /* Centre verticalement */
+  gap: 5px;                   /* Espace entre image et texte */
+  padding: 20px 20px;
+  color: rgb(8, 1, 1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  background: none;
 }
+
+.image-button2 {
+  position: absolute; /* Permet de placer le bouton librement */
+  top: 20px;          /* Distance par rapport au haut */
+  right: 5px;        /* Distance par rapport à la droite */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  color: black;
+}
+
+.image-button2 img{
+  width: 2em;                 /* Taille de l'image */
+  height: 2em;
+}
+
+.input[type="text"]{
+          width: 300px;
+          height: 40px;
+          font-size: 18px;
+          padding: 8px;
+      }
 
 .image-button img {
-    width: 2em;                 /* Taille de l'image */
-    height: 2em;
+  width: 2em;                 /* Taille de l'image */
+  height: 2em;
+}
+
+a{
+text-decoration: none;
+color: black;
+}
+
+.espace{
+padding: 5px;
 }
 
 
+/* Pour la page d'authentification*/
+.authentification-button{
+  font-size: 2em;
+  padding: 1.1em 6em;
+  background-color: whitesmoke;
+  border-color: black;
+  border-width: 0.2em;
+  border-radius: 0.8em;
+  cursor: pointer;
+}
+#connexion{
+
+}
+#identification{
+  
+}
