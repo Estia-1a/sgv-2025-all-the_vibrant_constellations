@@ -1,6 +1,6 @@
 
 /* ================================
-   Variables (BlaBlaCar Daily vibe)
+   Variables couleur
    ================================ */
 :root{
   --daily-green: #018e01;    /* Caribbean Green (Daily) */
@@ -227,16 +227,26 @@ footer{
   width: 2em;                 /* Taille de l'image */
   height: 2em;
 }
+.image-button p{
+  margin:0;
+  font-weight:600;
+  color: var(--bb-dark);
+}
+.image-button,
+.image-button2{
+  display:flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
 
-.image-button {
-    display: flex;               /* Aligne image et texte */
-    align-items: center;         /* Centre verticalement */
-    gap: 5px;                   /* Espace entre image et texte */
-    padding: 20px 20px;
-    color: rgb(8, 1, 1);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    background: none;
+.image-button:hover,
+.image-button2:hover{
+  background: #f0fbff;            /* léger bleu */
+  border-color: #d8f2ff;
+  box-shadow: var(--shadow-sm);
 }
