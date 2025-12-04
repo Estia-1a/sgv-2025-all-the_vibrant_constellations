@@ -1,145 +1,177 @@
-html, body {
-  height: 100%;           /* Prend toute la hauteur de la fenêtre */
-  margin: 0;              /* Supprime les marges par défaut */
-  padding: 0;             /* Supprime les espacements internes */
-  background-color: whitesmoke;
+
+/* ================================
+   Variables couleurs
+   ================================ */
+:root{
+  --bb-red:   #d30202;  /* BlaBlaBlue (logo) */
+  --bb-green:  #018e01;  /* Daily vert (Caribbean Green) */
+  --bb-dark:   #0c0c0c; /* Midnight Green pour accents */
+  --bg:        #f7f8fa;  /* fond app-like */
+  --bg-card:   #ffffff;  /* cartes/blocs */
+  --text:      #0c0c0c;  /* texte principal lisible */
+  --muted:     #6b7a85;  /* texte secondaire */
+  --border:    #e6ecf1;  /* bordures douces */
+  --radius:    16px;
+  --shadow-sm: 0 4px 12px rgba(23,42,58,0.08);
+  --shadow-md: 0 10px 24px rgba(23,42,58,0.12);
+  --gap:       16px;
 }
 
-article{
-text-align: center;
-background-color: whitesmoke;
+/* Base */
+*{ box-sizing:border-box; }
+html, body{
+  margin:0; padding:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height:1.6;
+}
+img{ display:block; max-width:100%; height:auto; }
+
+/* Liens */
+a{
+  color: var(--bb-dark);
+  text-decoration:none;
+  transition: color .2s ease, opacity .2s ease;
+}
+a:hover{ color: var(--bb-blue); }
+
+/* ================================
+   NAV / HEADER
+   ================================ */
+nav{
+  position: sticky; top:0; z-index:10;
+  display:flex; align-items:center; gap: var(--gap);
+  padding: 10px 16px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
-.image-logo{
-    width: 20em;                 /* Taille de l'image */
-   height: 20em;
+/* ================================
+   Boutons dans la navbar
+   ================================ */
+.image-button,
+.image-button2{
+  display:flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
-.image-button {
-<<<<<<< HEAD
-  display: flex;               /* Aligne image et texte */
-  align-items: center;         /* Centre verticalement */
-  gap: 5px;                   /* Espace entre image et texte */
-  padding: 20px 20px;
-  color: rgb(8, 1, 1);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  background: none;
+.image-button:hover,
+.image-button2:hover{
+  background: #f0fbff;            /* léger bleu */
+  border-color: #d8f2ff;
+  box-shadow: var(--shadow-sm);
 }
 
-.image-button2 {
-  position: absolute; /* Permet de placer le bouton librement */
-  top: 20px;          /* Distance par rapport au haut */
-  right: 5px;        /* Distance par rapport à la droite */
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background: none;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  color: black;
-}
-
+/* Icônes des boutons nav */
+.image-button img,
 .image-button2 img{
-  width: 2em;                 /* Taille de l'image */
-  height: 2em;
+  width: 32px; height: 32px;
+  border-radius: 8px;
 }
 
-.input[type="text"]{
-          width: 300px;
-          height: 40px;
-          font-size: 18px;
-          padding: 8px;
-      }
-=======
-    display: flex;               /* Aligne image et texte */
-    align-items: center;         /* Centre verticalement */
-    gap: 5px;                   /* Espace entre image et texte */
-    padding: 20px 20px;
-    color: rgb(8, 1, 1);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    background: none;
+/* Texte “connecté” dans le bouton */
+.image-button p{
+  margin:0;
+  font-weight:600;
+  color: var(--bb-dark);
 }
 
-.image-button2 {
-    position: absolute; /* Permet de placer le bouton librement */
-    top: 20px;          /* Distance par rapport au haut */
-    right: 5px;        /* Distance par rapport à la droite */
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background: none;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    color: black;
+/* ================================
+   Logo principal dans <main>
+   ================================ */
+.image-logo{
+  width: 140px;
+  margin: 10px auto 18px;
+  filter: drop-shadow(0 2px 6px rgba(23,42,58,0.10));
 }
 
- .image-button2 img{
-    width: 2em;                 /* Taille de l'image */
-    height: 2em;
+/* ================================
+   Article / Card (bloc de recherche)
+   ================================ */
+article{
+  margin: 18px auto; max-width: 900px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 18px;
 }
 
-.input[type="text"]{
-            width: 300px;
-            height: 40px;
-            font-size: 18px;
-            padding: 8px;
-        }
->>>>>>> origin/main
+/* ================================
+   Inputs (Départ, Arrivé, Date…)
+   ================================ */
+.espace{ padding: 10px; }
 
-.image-button img {
-  width: 2em;                 /* Taille de l'image */
-  height: 2em;
+input[type="text"],
+input[type="date"]{
+  width: 100%;
+  padding: 12px 14px;
+  background: #fff;
+  color: var(--text);
+  border: 1.6px solid var(--border);
+  border-radius: 14px;
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+input::placeholder{ color: #9aa9b3; }
+input:focus{
+  outline:none;
+  border-color: var(--bb-red);
+  box-shadow: 0 0 0 3px rgba(5, 11, 14, 0.2);
+  background: #fafdff;
 }
 
-a{
-text-decoration: none;
-color: black;
+/* Mise en page: deux dates côte à côte si nécessaire */
+.espace .dates{
+  display:grid; gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 768px){
+  .espace .dates{ grid-template-columns: 1fr; }
 }
 
-.espace{
-padding: 5px;
+/* ================================
+   Bouton principal “Rechercher” (.calendrier)
+   ================================ */
+.calendrier{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap: 8px;
+  font-size: 16px; font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--bb-green);
+  color: #fff;
+  background: linear-gradient(90deg, var(--bb-green), var(--bb-red));
+  box-shadow: var(--shadow-md);
+  cursor:pointer;
+  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease;
+  margin: 10px auto;
+}
+.calendrier:hover{
+  filter: brightness(1.05) saturate(1.02);
+  transform: translateY(-1px);
+}
+.calendrier:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(23,42,58,0.10);
 }
 
-.button{
-          font-size: 18px;
-          padding: 5px 10px;
-          background-color: whitesmoke;
-          border: black;
-          border-radius: 5px;
-          cursor: pointer;
+/* Aligner le bouton au centre sous le main */
+article > .calendrier{
+  display:block;
 }
 
-<<<<<<< HEAD
-/* Pour la page d'authentification*/
-.authentification-button{
-  font-size: 2em;
-  padding: 1.1em 6em;
-  background-color: whitesmoke;
-  border-color: black;
-  border-width: 0.2em;
-  border-radius: 0.8em;
-  cursor: pointer;
-}
-#connexion{
-
-}
-#identification{
-  
-=======
-a{
-  text-decoration: none;
-  color: black;
-}
-
-.espace{
-  padding: 5px;
->>>>>>> origin/main
+/* ================================
+   Accessibilité : focus visible
+   ================================ */
+:focus-visible{
+  outline: 2px solid rgba(1, 11, 16, 0.6);
+  outline-offset: 2px;
 }
