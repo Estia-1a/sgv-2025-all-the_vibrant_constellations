@@ -1,32 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ESTI'Autoa</title>
-        <link rel="stylesheet" href="styles/addtrajet.css" media="screen and (min-width: 768px)"> 
-    </head>
-    <body>
-    <nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ESTI'Autoa — Ajouter un trajet</title>
+
+    <!-- Ton CSS (garde ton fichier existant) -->
+     <link rel="stylesheet" href="styles/addtrajet.css" type="text/css" media="screen and (min-width: 768px)"> 
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav aria-label="Navigation principale">
         <button class="image-button">
-        <img src="media/pictures/PROFIL.webp" alt="Icône" >
-        <a href='index.html'> 
-        <p>Acceuil</p>
+        <img src="media/pictures/PROFIL.webp" alt="Icône" />
+          <a href='index.html'> 
+        <p> Accueil </p>
         </button>
-    </nav></a>
-    <article>
-        <main>
-            <h3>Ajoutrer un trajet</h3>
-            <div class="espace">
-                <input type="text" placeholder="Départ">
-             <div class="espace">
-                <input type="text" placeholder="Arrivé">
-            <div class="espace">
-                <input type="date" id="calendar">
-            </div>
-        </main>
-        <button class="calendrier">
-            <a href='trajet.html'>
-            <p> Ajouter </p>
+      </nav></a>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+      <article>
+        <h3>Ajouter un trajet</h3>
+
+        <!-- Formulaire -->
+
+          <div class="espace">
+            <label for="depart" class="sr-only">Départ</label>
+            <input
+              type="text"
+              id="depart"
+              name="depart"
+              placeholder="Départ"
+              required
+              autocomplete="address-level2"
+              inputmode="text"
+            />
+          </div>
+
+          <div class="espace">
+            <label for="arrivee" class="sr-only">Arrivée</label>
+            <input
+              type="text"
+              id="arrivee"
+              name="arrivee"
+              placeholder="Arrivée"
+              required
+              autocomplete="address-level2"
+              inputmode="text"
+            />
+          </div>
+
+          <div class="espace">
+            <label for="date" class="sr-only">Date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              required
+            />
+          </div>
+
+          <div class="espace">
+            <label for="heure" class="sr-only">Heure de départ</label>
+            <input
+              type="time"
+              id="heure"
+              name="heure"
+              required
+            />
+          </div>
+
+          <div class="espace">
+            <label for="places" class="sr-only">Nombre de places</label>
+            <input
+              type="number"
+              id="places"
+              name="places"
+              placeholder="Nombre de places"
+              min="1"
+              max="8"
+              step="1"
+              required
+            />
+          </div>
+
+          <div class="espace">
+            <button type="submit" class="calendrier">
+                 <a href='recherchertrajet.html'> 
+              <span>Ajouter</span>
             </button>
-    </article>
+          </div>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
