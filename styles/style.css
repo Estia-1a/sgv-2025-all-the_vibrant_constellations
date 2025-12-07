@@ -1,20 +1,21 @@
 
+
 /* ================================
    Variables couleurs
    ================================ */
 :root{
   --bb-red:   #d30202;  
-  --bb-green:  #004100;  
-  --bb-dark:   #0c0c0c; /* Midnight Green pour accents */
-  --bg:        #f7f8fa;  /* fond app-like */
-  --bg-card:   #ffffff;  /* cartes/blocs */
-  --text:      #0c0c0c;  /* texte principal lisible */
-  --muted:     #6b7a85;  /* texte secondaire */
-  --border:    #e6ecf1;  /* bordures douces */
-  --radius:    16px;
+  --bb-green: #004100;  
+  --bb-dark:  #0c0c0c;
+  --bg:       #f7f8fa;
+  --bg-card:  #ffffff;
+  --text:     #0c0c0c;
+  --muted:    #6b7a85;
+  --border:   #e6ecf1;
+  --radius:   16px;
   --shadow-sm: 0 4px 12px rgba(23,42,58,0.08);
   --shadow-md: 0 10px 24px rgba(23,42,58,0.12);
-  --gap:       16px;
+  --gap:      16px;
 }
 
 /* Base */
@@ -34,7 +35,7 @@ a{
   text-decoration:none;
   transition: color .2s ease, opacity .2s ease;
 }
-a:hover{ color: var(--bb-blue); }
+a:hover{ opacity: 0.9; }
 
 /* ================================
    NAV / HEADER
@@ -46,11 +47,10 @@ nav{
   background:#fff;
   border-bottom:1px solid var(--border);
   box-shadow: var(--shadow-sm);
+  overflow-x: auto; /* évite le débordement sur petits écrans */
 }
 
-/* ================================
-   Boutons dans la navbar
-   ================================ */
+/* Boutons nav (liens stylés) */
 .image-button,
 .image-button2{
   display:flex; align-items:center; gap: 10px;
@@ -59,22 +59,24 @@ nav{
   border-radius: 12px;
   background: #fff;
   color: var(--bb-dark);
-  cursor:pointer;
-  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .06s ease;
+  min-height: 44px; /* cible tactile */
 }
-
 .image-button:hover,
 .image-button2:hover{
-  background: #eef0f1;          
+  background: #eef0f1;
   border-color: #f0f7fb;
   box-shadow: var(--shadow-sm);
 }
+.image-button:active,
+.image-button2:active{ transform: translateY(1px); }
 
 /* Icônes des boutons nav */
 .image-button img,
 .image-button2 img{
-  width: 32px; height: 32px;
+  width: 28px; height: 28px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 /* Texte “connecté” dans le bouton */
@@ -85,19 +87,10 @@ nav{
 }
 
 /* ================================
-   Logo principal dans <main>
-   ================================ */
-.image-logo{
-  width: 140px;
-  margin: 10px auto 18px;
-  filter: drop-shadow(0 2px 6px rgba(23,42,58,0.10));
-}
-
-/* ================================
    Article / Card (bloc de recherche)
    ================================ */
 article{
-  margin: 18px auto; max-width: 900px;
+  margin: 18px auto; max-width: 980px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -105,10 +98,23 @@ article{
   padding: 18px;
 }
 
-/* ================================
-   Inputs (Départ, Arrivé, Date…)
-   ================================ */
-.espace{ padding: 10px; }
+/* MAIN – mobile-first (empilé) */
+main{
+  display: flex;
+  flex-direction: column; /* mobile: empilé */
+  align-items: stretch;
+  gap: 16px;
+}
+
+/* Logo principal */
+.image-logo{
+  width: 160px;
+  margin: 10px auto 6px; /* centré sur mobile */
+  filter: drop-shadow(0 2px 6px rgba(23,42,58,0.10));
+}
+
+/* Inputs */
+.espace{ padding: 10px; display: flex; flex-direction: column; gap: 10px; }
 
 input[type="text"],
 input[type="date"]{
@@ -128,18 +134,13 @@ input:focus{
   background: #fafdff;
 }
 
-/* Mise en page: deux dates côte à côte si nécessaire */
-.espace .dates{
+/* Deux dates côte à côte en desktop, empilées en mobile */
+.dates{
   display:grid; gap: 10px;
-  grid-template-columns: 1fr 1fr;
-}
-@media (max-width: 768px){
-  .espace .dates{ grid-template-columns: 1fr; }
+  grid-template-columns: 1fr; /* mobile */
 }
 
-/* ================================
-   Bouton principal “Rechercher” (.calendrier)
-   ================================ */
+/* Bouton principal “Rechercher” */
 .calendrier{
   display:inline-flex; align-items:center; justify-content:center;
   gap: 8px;
@@ -166,12 +167,41 @@ input:focus{
 /* Aligner le bouton au centre sous le main */
 article > .calendrier{
   display:block;
+  width: max-content;
 }
 
-/* ================================
-   Accessibilité : focus visible
-   ================================ */
+/* Accessibilité : focus visible */
 :focus-visible{
   outline: 2px solid rgba(1, 11, 16, 0.6);
   outline-offset: 2px;
+}
+
+/* ================================
+   Desktop & tablettes (>=768px)
+   ================================ */
+@media (min-width: 768px){
+  /* Layout: inputs à gauche, image à droite */
+  main{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 6px 6px;
+  }
+
+  .image-logo{
+    width: 220px;
+    margin: 0; /* image à droite sans centrage */
+    order: 2;  /* place l'image à droite */
+  }
+
+  .espace{
+    flex: 1;
+    max-width: 560px;
+    order: 1;  /* bloc formulaire à gauche */
+  }
+
+  .dates{
+    grid-template-columns: 1fr 1fr; /* deux colonnes en desktop */
+  }
 }

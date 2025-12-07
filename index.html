@@ -1,40 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>ESTI'Autoa</title>
-        <link rel="stylesheet" href="styles/style.css" media="screen and (min-width: 768px)"> 
+        <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
     <nav>
-        <button class="image-button">
-        <img src="media/pictures/PROFIL.webp" alt="Icône" >
-        <a href='authentification.html'>
+        <a href="authentification.html" class="image-button" aria-label="Profil / authentification">
+        <img src="media/pictures/PROFIL.webp" alt="Icône de profil">
         <p>connecté</p>
-        </button>
-        <button class="image-button2">
-        <a href='addtrajet.html'> 
-        <img src="media/pictures/Boutton ajouté.png" alt="Icône" >
-        </button></a>
+        </a>
+        <a href="addtrajet.html" class="image-button2" aria-label="Ajouter un trajet">
+        <img src="media/pictures/Boutton ajouté.png" alt="Icône ajouter">
+        <span>Ajouter</span>
+        </a>
     </nav>
-    <article>
-        <main>
-        <img class="image-logo" src="media/pictures/téléchargement.png" alt="Icône" />
-            <div class="espace">
-                <input type="text" placeholder="Départ">
-                <p></p>
-                <input type="text" placeholder="Arrivé">
-                <p></p>
-                <input type="date" id="calendar">
-                <p></p>
-                <input type="date" id="calendar">
-            </div>
-        </main>
-        <button class="calendrier">
-            <a href='trajet.html'>
-            <p> Rechercher </p>
-            </button>
-    </article>
-    </body>
+  <article>
+    <main>
+      <img class="image-logo" src="media/pictures/téléchargement.png" alt="Logo ESTI'Autoa" />
+      <div class="espace" aria-label="Recherche de trajet">
+        <input type="text" placeholder="Départ" name="depart" autocomplete="off">
+        <input type="text" placeholder="Arrivée" name="arrivee" autocomplete="off">
+        <div class="dates">
+          <input type="date" id="date-depart" name="date-depart">
+          <input type="date" id="date-retour" name="date-retour">
+        </div>
+      </div>
+    </main>
+    <a class="calendrier" href="trajet.html" aria-label="Rechercher un trajet">
+      <span>Rechercher</span>
+    </a>
+  </article>
+</body>
 </html>
