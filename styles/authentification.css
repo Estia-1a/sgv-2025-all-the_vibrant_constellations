@@ -1,0 +1,149 @@
+
+:root{
+  --bb-red:   #d30202;  
+  --bb-green:  #004100;  
+  --bb-dark:   #0c0c0c;
+  --bg:        #f7f8fa;
+  --bg-card:   #ffffff;
+  --text:      #0c0c0c;
+  --muted:     #6b7a85;
+  --border:    #e6ecf1;
+  --radius:    16px;
+  --shadow-sm: 0 4px 12px rgba(23,42,58,0.08);
+  --shadow-md: 0 10px 24px rgba(23,42,58,0.12);
+  --gap:       16px;
+}
+
+*{ box-sizing:border-box; }
+html, body{
+  margin:0; padding:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height:1.6;
+}
+
+/* NAV */
+nav{
+  position: sticky; top:0; z-index:10;
+  display:flex; align-items:center; gap: var(--gap);
+  padding: 10px 16px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.image-button{
+  display:flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.image-button:hover{
+  background: #f5f8f9;
+  border-color: #f5fcff;
+  box-shadow: var(--shadow-sm);
+}
+.image-button img{
+  width: 32px; height: 32px;
+  border-radius: 8px;
+}
+.image-button p{
+  margin:0;
+  font-weight:600;
+  color: var(--bb-dark);
+}
+
+/* MAIN LAYOUT: boutons à gauche (colonne), image à droite */
+main{
+  margin: 18px auto; max-width: 900px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre colonne de boutons et image */
+  gap: 24px;
+}
+
+/* Colonne de boutons */
+.actions{
+  display: flex;
+  flex-direction: column; /* empile les boutons */
+  gap: 12px;
+  min-width: 220px;
+}
+
+/* Boutons (utiliser <a> comme boutons) */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--bb-dark);
+  background: #fff;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.btn:hover{
+  background: #fafeff;
+  border-color: #eef3f6;
+  box-shadow: var(--shadow-sm);
+}
+.btn:active{
+  transform: translateY(1px);
+}
+.btn-primary{
+  background: var(--bb-green);
+  color: #fff;
+  border-color: var(--bb-green);
+}
+.btn-primary:hover{
+  background: #111;
+  border-color: #111;
+}
+.btn-secondary{
+  background: #fff;
+}
+
+/* Image à droite */
+.image-logo{
+  width: 200px; /* ajuste selon ton visuel */
+  max-width: 40%;
+  height: auto;
+  margin: 0; /* pas de centrage auto ici, on est en flex */
+  filter: drop-shadow(0 2px 6px rgba(23,42,58,0.10));
+}
+
+/* Accessibilité focus */
+:focus-visible{
+  outline: 2px solid rgba(1, 11, 16, 0.6);
+  outline-offset: 2px;
+}
+
+/* Responsive: sous 768px, on empile tout */
+@media (max-width: 768px){
+  main{
+    flex-direction: column; /* image passe sous les boutons */
+    align-items: stretch;
+    text-align: center;
+  }
+  .actions{
+    min-width: 0;
+  }
+  .image-logo{
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}

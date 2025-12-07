@@ -3,7 +3,7 @@
    Variables couleur
    ================================ */
 :root{
-  --daily-green: #018e01;    /* Caribbean Green (Daily) */
+  --daily-green: #004100;    /* Caribbean Green (Daily) */
   --daily-red: #d30202;    /* BlaBlaBlue (marque) */
   --daily-dark:  #0c0c0c;    /* Midnight Green pour accents */
   --bg:          #f7f8fa;    /* fond app-like */
