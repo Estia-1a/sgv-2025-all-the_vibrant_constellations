@@ -2,32 +2,27 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ESTI'Autoa — Ajouter un trajet</title>
-
-    <!-- Ton CSS (garde ton fichier existant) -->
-     <link rel="stylesheet" href="styles/addtrajet.css" type="text/css" media="screen and (min-width: 768px)"> 
+     <link rel="stylesheet" href="styles/addtrajet.css"> 
   </head>
-
   <body>
-    <!-- Navigation -->
-    <header>
-      <nav aria-label="Navigation principale">
-        <button class="image-button">
-        <img src="media/pictures/PROFIL.webp" alt="Icône" />
-          <a href='index.html'> 
-        <p> Accueil </p>
-        </button>
-      </nav></a>
+    <nav>
+        <div class="btn-container">
+          <a href="authentification.html" class="image-button" aria-label="Profil / authentification">
+          <img src="media/pictures/PROFIL.webp" alt="Icône de profil">
+          <span>Connexion</span>
+          </a>
+          <a href="index.html" class="image-button2" aria-label="Profil / Accueil" >
+          <img src="media/pictures/PROFIL.webp" alt="Icône de profil" />
+          <span>Accueil</span>
+          </a>
+        </div>
+        </nav>
     </header>
-
-    <!-- Contenu principal -->
     <main>
       <article>
         <h3>Ajouter un trajet</h3>
-
-        <!-- Formulaire -->
-
           <div class="espace">
             <label for="depart" class="sr-only">Départ</label>
             <input
@@ -40,7 +35,6 @@
               inputmode="text"
             />
           </div>
-
           <div class="espace">
             <label for="arrivee" class="sr-only">Arrivée</label>
             <input
@@ -53,7 +47,6 @@
               inputmode="text"
             />
           </div>
-
           <div class="espace">
             <label for="date" class="sr-only">Date</label>
             <input
@@ -63,7 +56,6 @@
               required
             />
           </div>
-
           <div class="espace">
             <label for="heure" class="sr-only">Heure de départ</label>
             <input
@@ -73,7 +65,6 @@
               required
             />
           </div>
-
           <div class="espace">
             <label for="places" class="sr-only">Nombre de places</label>
             <input
@@ -87,14 +78,12 @@
               required
             />
           </div>
-
           <div class="espace">
             <button type="submit" class="calendrier">
                  <a href='recherchertrajet.html'> 
               <span>Ajouter</span>
             </button>
           </div>
-        </form>
       </article>
     </main>
   </body>

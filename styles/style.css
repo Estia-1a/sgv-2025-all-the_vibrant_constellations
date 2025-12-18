@@ -11,9 +11,9 @@
   --text:      #0c0c0c;  /* texte principal lisible */
   --muted:     #6b7a85;  /* texte secondaire */
   --border:    #e6ecf1;  /* bordures douces */
-  --radius:    16px;
+  --radius:    14px;
   --shadow-sm: 0 4px 12px rgba(23,42,58,0.08);
-  --shadow-md: 0 10px 24px rgba(23,42,58,0.12);
+  --shadow-md: 0 8px 24px rgba(23,42,58,0.12);
   --gap:       16px;
 }
 
@@ -25,35 +25,61 @@ html, body{
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 img{ display:block; max-width:100%; height:auto; }
 
 /* Liens */
 a{
-  color: var(--bb-dark);
+  color: var(--bg);
   text-decoration:none;
   transition: color .2s ease, opacity .2s ease;
 }
-a:hover{ color: var(--bb-blue); }
+a:hover{ color: var(--text); }
 
 /* ================================
    NAV / HEADER
    ================================ */
 nav{
-  position: sticky; top:0; z-index:10;
-  display:flex; align-items:center; gap: var(--gap);
+  position: sticky; 
+  top:0; 
+  z-index:10;
+  display:flex; 
+  align-items:center; 
   padding: 10px 16px;
   background:#fff;
   border-bottom:1px solid var(--border);
   box-shadow: var(--shadow-sm);
+  width: auto;     /* ou 100%, 60rem, clamp(…); */
+  height: auto;     /* utile pour barres de nav */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between; /* un à gauche, l'autre à droite */
+  align-items: center;            /* aligne verticalement */
+  width: 100%;                    /* prend toute la largeur */
 }
 
 /* ================================
    Boutons dans la navbar
    ================================ */
-.image-button,
-.image-button2{
+.image-button{
   display:flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button2{
+  display:flex;
+  align-items:center; 
+  gap: 10px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 12px;
@@ -108,7 +134,10 @@ article{
 /* ================================
    Inputs (Départ, Arrivé, Date…)
    ================================ */
-.espace{ padding: 10px; }
+.espace{  display: flex;
+  flex-direction: column; /* ou row */
+  gap: 12px;              /* espace entre les div */
+} 
 
 input[type="text"],
 input[type="date"]{

@@ -4,7 +4,7 @@
    ================================ */
 :root{
   --daily-green: #004100;    /* Caribbean Green (Daily) */
-  --daily-red: #d30202;    /* BlaBlaBlue (marque) */
+  --daily-red: #d30202;   
   --daily-dark:  #0c0c0c;    /* Midnight Green pour accents */
   --bg:          #f7f8fa;    /* fond app-like */
   --bg-card:     #ffffff;    /* cartes/blocs */
@@ -18,9 +18,15 @@
 }
 
 /* Base */
-*{ box-sizing: border-box; }
+*{ box-sizing:border-box; }
+
 html,body{
-  margin:0; padding:0;
+  overflow: hidden;
+  margin:0; 
+  padding:0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -28,67 +34,99 @@ html,body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.container{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 /* Liens */
 a{
-  color: var(--daily-dark);
+  color: var(--bg);
   text-decoration: none;
   transition: color .2s ease, opacity .2s ease;
 }
-a:hover{ color: var(--daily-blue); }
+a:hover{ color: var(--text); }
 
 /* ================================
    NAV / HEADER (clair et sticky)
    ================================ */
-header{
-  position: sticky; top:0; z-index: 10;
+nav{
+   position: sticky; 
+  top:0; 
+  z-index:10;
+  display:flex; 
+  align-items:center; 
+  padding: 10px 16px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  width: auto;     /* ou 100%, 60rem, clamp(…); */
+  height: auto;     /* utile pour barres de nav */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between; /* un à gauche, l'autre à droite */
+  align-items: center;            /* aligne verticalement */
+  width:53%;          
+}
+
+/*==============================
+   Boutons dans la navbar
+   ================================ */
+.image-button{
+  display:flex; align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
   background: #fff;
-  border-bottom: 1px solid var(--border);
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button2{
+  display:flex;
+  align-items:center; 
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button:hover,
+.image-button2:hover{
+  background: #eef0f1;          
+  border-color: #f0f7fb;
   box-shadow: var(--shadow-sm);
 }
-nav{
-  display:flex; align-items:center; gap: var(--gap);
-  padding: 10px 20px;
+
+/* Icônes des boutons nav */
+.image-button img,
+.image-button2 img{
+  width: 32px; height: 32px;
+  border-radius: 8px;
 }
 
-/* ================================
-   Section héro (facultatif)
-   ================================ */
-.hero{
-  padding: 28px 0 10px;
-  background: linear-gradient(180deg,#ffffff,#f8fbff);
-}
-.hero-inner{ text-align:center; }
-.hero-title{
-  font-weight: 800;
-  font-size: clamp(24px, 4vw, 36px);
-  color: var(--daily-dark);
-  letter-spacing: .01em;
-  margin: 0 0 6px;
-}
-.hero-subtitle{
-  color: var(--muted);
-  margin: 0 auto 14px;
-  max-width: 720px;
+/* Icônes des boutons nav */
+.image-button img{
+  width: 32px; height: 32px;
+  border-radius: 8px;
 }
 
-/* Séparateur fin */
-.hr-thin{
-  height: 1px; border: none;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 12px auto;
+/* Texte “Acceuil” dans le bouton */
+.image-button p{
+  margin:0;
+  font-weight:600;
+  color: var(--bb-dark);
 }
+
 
 /* ================================
    Article / Card
    ================================ */
 article{
-  margin: 20px auto; max-width: 900px;
+  margin: 18px auto; max-width: 900px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -111,6 +149,7 @@ article p{ color: var(--text); }
   display: grid; gap: var(--gap);
   grid-template-columns: 1fr 1fr;
 }
+
 @media (max-width: 768px){
   .form-grid{ grid-template-columns: 1fr; }
 }
@@ -190,7 +229,6 @@ input:focus{
 
 .calendrier:focus-visible{
   outline: 3px solid #d30202    /* rouge focus */
-  outline-offset: 2px;
 }
 
 
