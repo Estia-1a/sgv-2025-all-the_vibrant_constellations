@@ -1,29 +1,55 @@
-
 :root{
-  --bb-red:   #d30202;  
-  --bb-green:  #004100;  
-  --bb-dark:   #0c0c0c;
-  --bg:        #f7f8fa;
-  --bg-card:   #ffffff;
-  --text:      #0c0c0c;
-  --muted:     #6b7a85;
-  --border:    #e6ecf1;
-  --radius:    16px;
-  --shadow-sm: 0 4px 12px rgba(23,42,58,0.08);
-  --shadow-md: 0 10px 24px rgba(23,42,58,0.12);
-  --gap:       16px;
+  --daily-green: #004100;    /* Caribbean Green (Daily) */
+  --daily-red: #d30202;   
+  --bb-dark:  #0c0c0c;    /* Midnight Green pour accents */
+  --bg:          #f7f8fa;    /* fond app-like */
+  --bg-card:     #ffffff;    /* cartes/blocs */
+  --text:        #000000;    /* texte principal lisible */
+  --muted:       #6b7a85;    /* texte secondaire */
+  --border:      #e6ecf1;    /* bordures douces */
+  --radius:      14px;
+  --shadow-sm:   0 4px 12px rgba(23,42,58,0.08);
+  --shadow-md:   0 8px 24px rgba(23,42,58,0.12);
+  --gap:         16px;
 }
 
+/* Base */
 *{ box-sizing:border-box; }
-html, body{
+html,body{
   margin:0; padding:0;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* NAV */
+
+.barre {
+ display: grid;
+  grid-template-columns: 1fr auto auto; /* espace | centre | droite */
+  align-items: center;
+  column-gap: 16px; /* 👈 écart fixe entre les deux boutons */
+  padding: 8px 16px;
+}
+
+
+.btn-centre { grid-column: 2; justify-self: center; }
+.btn-droite { grid-column: 3; justify-self: end;}
+    
+
+/* Liens */
+a{
+  color: var(--bg);
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
+}
+a:hover{ color: var(--text); }
+
+/* ================================
+   NAV / HEADER (clair et sticky)
+   ================================ */
 nav{
   position: sticky; 
   top:0; 
@@ -35,33 +61,63 @@ nav{
   background:#fff;
   border-bottom:1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  width: auto;
+  width: auto;     /* ou 100%, 60rem, clamp(…); */
+  height: auto;     /* utile pour barres de nav */
 }
 
+/* ================================
+   Boutons dans la navbar
+   ================================ */
 .image-button{
-  display:flex; align-items:center; gap: 10px;
+  display:flex; align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 150px;
+  height: 50px; 
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button2{
+  display:flex;
+  align-items:center; 
+  gap: 10px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 12px;
   background: #fff;
   color: var(--bb-dark);
-  text-decoration: none;
+  width: 150px;
+  height: 50px; 
+  cursor:pointer;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-.image-button:hover{
-  background: #f5f8f9;
-  border-color: #f5fcff;
+
+.image-button:hover,
+.image-button2:hover{
+  background: #eef0f1;          
+  border-color: #f0f7fb;
   box-shadow: var(--shadow-sm);
 }
-.image-button img{
+
+/* Icônes des boutons nav */
+.image-button img,
+.image-button2 img{
   width: 32px; height: 32px;
   border-radius: 8px;
 }
+
+/* Texte “connecté” dans le bouton */
 .image-button p{
   margin:0;
   font-weight:600;
   color: var(--bb-dark);
 }
+
 
 /* MAIN LAYOUT: boutons à gauche (colonne), image à droite */
 main{
@@ -110,9 +166,9 @@ main{
   transform: translateY(1px);
 }
 .btn-primary{
-  background: var(--bb-green);
+  background: var(--daily-green);
   color: #fff;
-  border-color: var(--bb-green);
+  border-color: var(--daily-green);
 }
 .btn-primary:hover{
   background: #111;

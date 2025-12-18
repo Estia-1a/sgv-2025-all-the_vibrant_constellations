@@ -73,6 +73,8 @@ nav{
   background: #fff;
   color: var(--bb-dark);
   cursor:pointer;
+  width: 150px;
+  height: 50px; 
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
@@ -86,6 +88,8 @@ nav{
   background: #fff;
   color: var(--bb-dark);
   cursor:pointer;
+  width: 150px;
+  height: 50px; 
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
