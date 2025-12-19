@@ -30,6 +30,10 @@ html, body{
 }
 img{ display:block; max-width:100%; height:auto; }
 
+.btn-left  { justify-self: start; }
+.btn-center{ justify-self: center; } /* le bouton est exactement au milieu */
+.btn-right { justify-self: end; }
+
 /* Liens */
 a{
   color: var(--bg);
@@ -66,15 +70,16 @@ nav{
    Boutons dans la navbar
    ================================ */
 .image-button{
-  display:flex; align-items:center; gap: 10px;
+  display:flex; align-items:center; 
+  gap: 10px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 12px;
+  width: 150px;
+  height: 50px; 
   background: #fff;
   color: var(--bb-dark);
   cursor:pointer;
-  width: 150px;
-  height: 50px; 
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
@@ -87,14 +92,30 @@ nav{
   border-radius: 12px;
   background: #fff;
   color: var(--bb-dark);
-  cursor:pointer;
   width: 150px;
   height: 50px; 
+  cursor:pointer;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
+.image-button3{
+   display:flex;
+  align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  width: 150px;
+  height: 50px; 
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+} 
+
 .image-button:hover,
-.image-button2:hover{
+.image-button2:hover,
+.image-button3:hover{
   background: #eef0f1;          
   border-color: #f0f7fb;
   box-shadow: var(--shadow-sm);
@@ -102,7 +123,8 @@ nav{
 
 /* Icônes des boutons nav */
 .image-button img,
-.image-button2 img{
+.image-button2 img,
+.image-button3 img{
   width: 32px; height: 32px;
   border-radius: 8px;
 }
