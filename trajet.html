@@ -4,141 +4,162 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ESTI'Autoa</title>
-     <link rel="stylesheet" href="styles/trajet.css"> 
-    </head>
-    <body>
-     <nav>
-    <div class="btn-container">
-        <div class="zone-left">
-            <a href="authentification.html" class="image-button" aria-label="Profil / authentification">
+    <link rel="stylesheet" href="styles/trajet.css">
+  </head>
+  <body>
+    <nav>
+      <div class="btn-container">
+        <a href="authentification.html" class ="image-button" aria-label="Profil / authentification">
             <img src="media/pictures/PROFIL.webp" alt="Icône de profil">
             <span>Connexion</span>
-        </a>
-        </div>
-        <div class="zone-center">
-            <a href="index.html" class="image-button2" aria-label="Profil / Accueil" >
+      </a>
+      <a href="index.html" class="image-button2" aria-label="Profil / Accueil" >
             <img src="media/pictures/PROFIL.webp" alt="Icône de profil" />
           <span>Accueil</span>
-          </a>
-        </div>
-        <div class="zone-right">
-            <a href="addtrajet.html" class="image-button3" aria-label="Ajouter un trajet">
-            <img src="media/pictures/Boutton ajouté.png" alt="Icône ajouter">
+      </a>
+       <a href="addtrajet.html" class="image-button3"  aria-label="Profil / Ajouter">
+            <img src="media/pictures/Boutton ajouté.png" alt="Icône de profil">
             <span>Ajouter</span>
-        </a>
-        </div>
-    </div>
-    </nav>  
-<body>
-  <header class="topbar">
-    <h1 class="page-title">Où voulez-vous aller&nbsp;?</h1>
-    <div class="search-row">
-      <div class="pill-input">
-        <span class="icon">🔍</span>
-        <input type="text" placeholder="Départ" aria-label="Départ" />
-        <span class="arrow">↔︎</span>
+      </a>
       </div>
-      <div class="pill-input">
-        <span class="icon">🔍</span>
-        <input type="text" placeholder="Destination" aria-label="Destination" />
-      </div>
-      <div class="time-picker">
-        <label for="hour">Heure de départ :</label>
-        <div class="time-controls">
-          <input id="hour" type="number" min="0" max="23" value="10" aria-label="Heure" />
-          <span class="sep">:</span>
-          <input id="minute" type="number" min="0" max="59" value="09" aria-label="Minutes" />
-          <div class="spinner">
-            <button class="btn up" aria-label="Augmenter">▴</button>
-            <button class="btn down" aria-label="Diminuer">▾</button>
+    </nav>
+    <header class="topbar">
+      <h1 class="page-title">Où voulez-vous aller&nbsp;?</h1>
+
+      <form class="search-row" role="search" aria-label="Recherche de trajets">
+        <div class="pill-input">
+          <span class="icon" aria-label="true">🔍</span>
+          <input type="text" placeholder="Départ" aria-label="Départ" />
+        </div>
+
+        <div class="pill-input">
+          <span class="icon" aria-label="true">🔍</span>
+          <input type="text" placeholder="Destination" aria-label="Destination" />
+        </div>
+
+        <div class="time-picker">
+          <label for="hour">Heure de départ :</label>
+          <div class="time-controls">
+            <input id="hour" type="number" min="0" max="23" value="10" aria-label="Heure (0 à 23)" />
+            <span class="sep">:</span>
+            <input id="minute" type="number" min="0" max="59" value="09" aria-label="Minutes (0 à 59)" />
+            <div class="spinner" aria-label="true">
+              <button class="btn up" type="button">▴</button>
+              <button class="btn down" type="button">▾</button>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </header>
-  <main class="layout">
-    <aside class="filters">
-      <h2 class="filters-title">Trier par</h2>
-      <label class="check">
-        <input type="checkbox" />
-        <span>Départ le plus tôt</span>
-      </label>
-      <label class="check">
-        <input type="checkbox" checked />
-        <span>Prix le plus bas</span>
-      </label>
-      <label class="check">
-        <input type="checkbox" />
-        <span>Trajet le plus court</span>
-      </label>
-      <label class="check">
-        <input type="checkbox" />
-        <span>Le mieux noté</span>
-      </label>
-    </aside>
-    <div class="divider" aria-hidden="true"></div>
-    <section class="results">
-      <article class="card">
-        <header class="card-head">
-          <div class="times">
-            <div class="leg">
-              <span class="t-main">8:00</span>
-              <span class="t-dash">+------</span>
-              <span class="t-duration">2h20</span>
-              <span class="t-dash">------+</span>
-              <span class="t-main">10:20</span>
+      </form>
+    </header>
+
+
+    <main class="layout">
+      <aside class="filters" aria-label="Filtres">
+        <h2 class="filters-title">Trier par</h2>
+
+        <label class="check">
+          <input type="checkbox" />
+          <span>Départ le plus tôt</span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" checked />
+          <span>Prix le plus bas</span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <span>Trajet le plus court</span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <span>Le mieux noté</span>
+        </label>
+      </aside>
+
+      <div class="divider" aria-label="true"></div>
+
+      <section class="results" aria-label="Résultats">
+
+        <article class="card">
+          <header class="card-head">
+            <div class="times">
+              <div class="leg">
+                <span class="t-main">08:00</span>
+                <span class="t-line" aria-label="true"></span>
+                <span class="t-duration">2h20</span>
+                <span class="t-line" aria-label="true"></span>
+                <span class="t-main">10:20</span>
+              </div>
+              <div class="cities">
+                <span class="from">Bidart</span>
+                <span class="to">Bayonne</span>
+              </div>
             </div>
-            <div class="cities">
-              <span class="from">Bidart</span>
-              <span class="to">Bayonne</span>
+            <div class="price">
+              10<span class="euro">€</span>
+            </div>
+          </header>
+
+          <div class="card-body">
+            <div class="driver">
+              <span class="avatar" aria-label="true">👤</span>
+              <span class="name">Mathieu</span>
+              <span class="rating">
+                <span class="star" aria-label="true">★</span>
+                4.8
+              </span>
+            </div>
+
+            <div class="seat-info">
+              <span class="avail">3 places restantes</span>
+              <span class="tags">
+                <span class="chip outline">Bagages OK</span>
+              </span>
             </div>
           </div>
-          <div class="price">10<span class="euro">€</span></div>
-        </header>
-        <div class="card-body">
-          <div class="left-icons">
-            <span class="user" aria-hidden="true">👤</span>
-            <span class="name">Mathieu</span>
-            <span class="rating">4.8</span>
-            <span class="star" aria-hidden="true">★</span>
-          </div>
-          <div class="seat-info">
-            <span class="avail">3 places restantes</span>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <header class="card-head">
-          <div class="times">
-            <div class="leg">
-              <span class="t-main">18:30</span>
-              <span class="t-dash">+------</span>
-              <span class="t-duration">0h50</span>
-              <span class="t-dash">------+</span>
-              <span class="t-main">19:20</span>
+        </article>
+
+        <article class="card">
+          <header class="card-head">
+            <div class="times">
+              <div class="leg">
+                <span class="t-main">18:30</span>
+                <span class="t-line" aria-label="true"></span>
+                <span class="t-duration">0h50</span>
+                <span class="t-line" aria-label="true"></span>
+                <span class="t-main">19:20</span>
+              </div>
+              <div class="cities">
+                <span class="from">Hendaye</span>
+                <span class="to">Bidart</span>
+              </div>
             </div>
-            <div class="cities">
-              <span class="from">Hendaye</span>
-              <span class="to">Bidart</span>
+            <div class="price">
+              15<span class="euro">€</span>
+            </div>
+          </header>
+
+          <div class="card-body">
+            <div class="driver">
+              <span class="avatar" aria-label="true">👤</span>
+              <span class="name">Pierre</span>
+              <span class="rating">
+                <span class="star" aria-label="true">★</span>
+                4.6
+              </span>
+            </div>
+
+            <div class="seat-info">
+              <span class="avail">2 places restantes</span>
+              <span class="tags">
+                <span class="chip outline">Pas de bagages</span>
+              </span>
             </div>
           </div>
-          <div class="price">15<span class="euro">€</span></div>
-        </header>
-        <div class="card-body">
-          <div class="left-icons">
-            <span class="user" aria-hidden="true">👤</span>
-            <span class="name">Pierre</span>
-            <span class="rating">4.6</span>
-            <span class="star" aria-hidden="true">★</span>
-          </div>
-          <div class="seat-info">
-            <span class="avail">2 places restantes</span>
-          </div>
-        </div>
-      </article>
-    </section>
-  </main>
-  <footer class="credits" aria-hidden="true">
-  </footer>
-</body>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

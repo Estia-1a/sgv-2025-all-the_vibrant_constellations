@@ -29,10 +29,6 @@ html, body{
 }
 img{ display:block; max-width:100%; height:auto; }
 
-.btn-left  { justify-self: start; }
-.btn-center{ justify-self: center; } /* le bouton est exactement au milieu */
-.btn-right { justify-self: end; }
-
 /* Liens */
 a{
   color: var(--bg);
@@ -59,8 +55,6 @@ nav{
 }
 
 .btn-container {
-  display: flex;
-  justify-content: space-between; /* un à gauche, l'autre à droite */
   align-items: center;            /* aligne verticalement */
   width: 100%;                    /* prend toute la largeur */
 }

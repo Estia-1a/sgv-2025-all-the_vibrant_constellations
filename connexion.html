@@ -1,9 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ESTI'Autoa</title>
-        <link rel="stylesheet" href="meconnecter.css"> 
-    </head>  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ESTI'Autoa</title>
+     <link rel="stylesheet" href="styles/connexion.css"> 
+  </head>
+  <body>
+    <nav>
+     <div class="btn-container">
+        <a href="authentification.html" class ="image-button" aria-label="Profil / authentification">
+            <img src="media/pictures/PROFIL.webp" alt="Icône de profil">
+            <span>Connexion</span>
+      </a>
+      <a href="index.html" class="image-button2" aria-label="Profil / Accueil" >
+            <img src="media/pictures/PROFIL.webp" alt="Icône de profil" />
+          <span>Accueil</span>
+      </a>
+       <a href="addtrajet.html" class="image-button3"  aria-label="Profil / Ajouter">
+            <img src="media/pictures/Boutton ajouté.png" alt="Icône de profil">
+            <span>Ajouter</span>
+      </a>
+      </div>
+    </nav>
+<body>
+  <main class="page" aria-labelledby="title">
+    <section class="card" role="form" aria-describedby="subtitle">
+      <h1 id="title" class="title">Connectez‑vous</h1>
+      <p id="subtitle" class="subtitle">Accédez à votre espace en toute sécurité</p>
+      <form class="form" action="#" method="post" novalidate>
+        <div class="field">
+          <label class="label" for="email">E‑mail</label>
+          <input class="input" id="email" name="email" type="email" placeholder="E‑mail" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label class="label" for="password">Mot de passe</label>
+          <input class="input" id="password" name="password" type="password" placeholder="Mot de passe" autocomplete="current-password" required />
+        </div>
+
+        <div class="row">
+          <label class="check">
+            <input id="remember" name="remember" type="checkbox" />
+            <span>Se souvenir de moi</span>
+          </label>
+
+          <a href="#" class="forgot">Mot de passe oublié&nbsp;?</a>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Connexion</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
 </html>
