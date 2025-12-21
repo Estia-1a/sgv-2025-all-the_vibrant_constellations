@@ -6,7 +6,6 @@
   --bb-red:   #d30202;   /* bouton/cta secondaire */
   --bb-green: #004100;   /* accents positifs */
   --bb-dark:  #0c0c0c;   /* texte/accent sombre */
-
   --bg:       #f7f8fa;   /* fond app-like */
   --bg-card:  #ffffff;   /* cartes/blocs */
   --text:     #0c0c0c;   /* texte principal */
@@ -76,7 +75,6 @@ nav{
   list-style: none; /* retire le triangle natif, on stylise */
   cursor: pointer;
   display: inline-block;
-
   background: var(--bb-green);
   color: #fff;
   border-radius: 999px;
