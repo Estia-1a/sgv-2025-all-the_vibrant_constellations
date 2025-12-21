@@ -76,8 +76,8 @@ nav{
   list-style: none; /* retire le triangle natif, on stylise */
   cursor: pointer;
   display: inline-block;
-  border: 2px solid var(--daily-dark);
-  background: var(--daily-green);
+  border: 2px solid var(--bb-dark);
+  background: var(--bb-green);
   color: #fff;
   border-radius: 999px;
   padding: 10px 18px;
@@ -118,7 +118,7 @@ nav{
 .menu-btn{
   border: 1px solid var(--border);
   background: #fff;
-  color: var(--daily-dark);
+  color: var(--bb-dark);
   border-radius: calc(var(--radius) - 8px);
   padding: 10px 14px;
   font-weight: 600;
