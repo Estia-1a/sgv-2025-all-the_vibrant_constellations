@@ -1,0 +1,314 @@
+:root{
+  --daily-green: #004100;    /* Caribbean Green (Daily) */
+  --daily-red: #d30202;   
+  --daily-dark:  #0c0c0c;    /* Midnight Green pour accents */
+  --bg:          #f7f8fa;    /* fond app-like */
+  --bg-card:     #ffffff;    /* cartes/blocs */
+  --text:        #000000;    /* texte principal lisible */
+  --muted:       #6b7a85;    /* texte secondaire */
+  --border:      #e6ecf1;    /* bordures douces */
+  --radius:      14px;
+  --shadow-sm:   0 4px 12px rgba(23,42,58,0.08);
+  --shadow-md:   0 8px 24px rgba(23,42,58,0.12);
+  --gap:         16px;
+}
+
+/* Base */
+*{ box-sizing:border-box; }
+html,body{
+  margin:0; padding:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Liens */
+a{
+  color: var(--bg);
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
+}
+a:hover{ color: var(--text); }
+
+/* ================================
+   NAV / HEADER (clair et sticky)
+   ================================ */
+nav{
+  position: sticky; 
+  top:0; 
+  z-index:10;
+  display:flex; 
+  align-items:center; 
+  gap: var(--gap);
+  padding: 10px 16px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  width: auto;     /* ou 100%, 60rem, clamp(…); */
+  height: auto;     /* utile pour barres de nav */
+}
+
+.btn-container {
+  align-items: center;            /* aligne verticalement */
+  width: 100%;                    /* prend toute la largeur */
+}
+
+/* bouton d’ouverture (le <summary>) */
+.menu-trigger{
+  list-style: none; /* retire le triangle natif, on stylise */
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid var(--daily-dark);
+  background: var(--daily-green);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+.menu-trigger::-webkit-details-marker{ display:none; } /* retire le triangle sur WebKit */
+
+.menu{
+  display:inline-block;
+  position: relative;
+}
+
+.menu-actions{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  min-width: 220px;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.menu[open] .menu-actions{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu-btn{
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--daily-dark);
+  border-radius: calc(var(--radius) - 8px);
+  padding: 10px 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.menu-btn:hover{ background:#f6f8fb; border-color:#d8e0e6; }
+
+/* ================================
+   Boutons dans la navbar
+   ================================ */
+
+.image-button{
+  display:flex; align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 150px;
+  height: 50px; 
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button2{
+  display:flex;
+  align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  width: 150px;
+  height: 50px; 
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button3{
+  display:flex;
+  align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--bb-dark);
+  width: 150px;
+  height: 50px; 
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.image-button4{
+  display:flex; align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 150px;
+  height: 50px; 
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.image-button:hover,
+.image-button2:hover,
+.image-button3:hover,
+.image-button4:hover{
+  background: #eef0f1;          
+  border-color: #f0f7fb;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Icônes des boutons nav */
+.image-button img,
+.image-button2 img,
+.image-button3 img,
+.image-button4 img{
+  width: 32px; height: 32px;
+  border-radius: 8px;
+}
+
+
+/* Texte “connecté” dans le bouton */
+.image-button p{
+  margin:0;
+  font-weight:600;
+  color: var(--bb-dark);
+}
+
+
+/* =========================
+   Carte d'inscription
+==========================*/
+.card {
+    margin: 18px auto;
+      width: 100%;
+      max-width: 520px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: clamp(20px, 4vw, 36px);
+    }
+
+.title {
+      margin: 0 0 18px 0;
+      text-align: center;
+      font-weight: 800;
+      font-size: clamp(26px, 4.2vw, 36px);
+      color: var(--daily-dark);
+      letter-spacing: 0.2px;
+    }
+
+.subtitle {
+      margin: -6px 0 24px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.975rem;
+    }
+
+/* =========================
+    Formulaire
+==========================*/
+.form {
+      display: grid;
+      gap: var(--gap);
+    }
+
+.field {
+      display: grid;
+      gap: 8px;
+    }
+
+.label {
+      font-weight: 600;
+      color: var(--daily-dark);
+      font-size: 0.95rem;
+    }
+
+.input {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #f1f3f5; /* léger contraste comme sur ta maquette */
+      color: var(--text);
+      border-radius: calc(var(--radius) - 6px);
+      padding: 14px 16px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.input::placeholder { color: #9aa7b1; }
+.input:hover { border-color: #d8e0e6; }
+.input:focus {
+      border-color: var(--daily-green);
+      background: #fff;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--daily-green) 20%, transparent);
+}
+.input[aria-invalid="true"] {
+      border-color: var(--daily-red);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--daily-red) 18%, transparent);
+ }
+
+
+/* Bouton primaire */
+.actions {
+      display: grid;
+      place-items: center;
+      margin-top: 6px;
+    }
+.btn {
+      --btn-pad-y: 12px;
+      --btn-pad-x: 22px;
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: var(--btn-pad-y) var(--btn-pad-x);
+      background: color-mix(in srgb, var(--daily-green) 92%, #00d084 0%); /* vert profond */
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .2px;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(0,65,0,0.22);
+      transition: transform .05s ease, box-shadow .15s ease, background .15s ease;
+    }
+.btn:hover { box-shadow: 0 8px 22px rgba(0,65,0,0.28); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Accessibilité : focus visibles au clavier */
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--daily-green) 30%, transparent);
+      outline-offset: 2px;
+    }
+
+  

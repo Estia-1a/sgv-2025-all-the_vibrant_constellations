@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ESTI'Autoa</title>
+    <link rel="stylesheet" href="styles/Messoldes.css">
+  </head>
+    <nav>
+    <details class="menu">
+    <summary class="menu-trigger">Menu</summary>
+     <div class="btn-container">
+        <a href="authentification.html" class ="image-button" aria-label="Profil / authentification">
+            <img src="media/pictures/PROFIL.webp" alt="Icône de profil">
+            <span>Connexion</span>
+      </a>
+      <a href="index.html" class="image-button2" aria-label="Profil / Accueil" >
+            <img src="media/pictures/Accueil.png" alt="Icône de maison" />
+          <span>Accueil</span>
+      </a>
+       <a href="addtrajet.html" class="image-button3"  aria-label="Profil / Ajouter">
+            <img src="media/pictures/Boutton ajouté.png" alt="+">
+            <span>Ajouter</span>
+      </a>
+      <a href="Messoldes.html" class="image-button4"  aria-label="Profil / Ajouter">
+            <img src="media/pictures/Portefeuille.png" alt="Icône de portefeuille">
+            <span>Mes soldes</span>
+      </a>
+      </div>
+    </nav>
+    </details>
+    <body>
+        <div class="soldes-container">
+         <div class="solde-card">
+          <div class="solde-icon">🪙</div>
+                <p class="solde-value">135€</p>
+             <p class="solde-label">Économies jusqu'ici</p>
+          </div>
+            <div class="separator"></div>
+             <div class="solde-card">
+             <div class="solde-icon">🚗</div>
+            <p class="solde-value">8</p>
+            <p class="solde-label">Trajet au total</p>
+          </div>
+            <div class="separator"></div>
+            <div class="solde-card solde-action" aria-labelledby="retirer-title">
+            <div class="solde-icon">🏦</div>
+            <p id="retirer-title" class="solde-value">Retirer</p>
+            <p class="solde-label">Transférez vos économies</p>
+            <div class="solde-actions">
+            <button class="btn-retirer" type="button" id="btn-retirer">
+            <span>Récupérer mon solde</span>
+            </button>
+          </div>
+        </div>
+    </body>   
+</html>
