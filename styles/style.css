@@ -59,6 +59,62 @@ nav{
   width: 100%;                    /* prend toute la largeur */
 }
 
+/* bouton d’ouverture (le <summary>) */
+.menu-trigger{
+  list-style: none; /* retire le triangle natif, on stylise */
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid var(--bb-dark);
+  background: var(--bb-green);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+.menu-trigger::-webkit-details-marker{ display:none; } /* retire le triangle sur WebKit */
+
+.menu{
+  display:inline-block;
+  position: relative;
+}
+
+.menu-actions{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  min-width: 220px;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.menu[open] .menu-actions{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu-btn{
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--bb-dark);
+  border-radius: calc(var(--radius) - 8px);
+  padding: 10px 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.menu-btn:hover{ background:#f6f8fb; border-color:#d8e0e6; }
+
 /* ================================
    Boutons dans la navbar
    ================================ */
@@ -106,9 +162,23 @@ nav{
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 } 
 
+.image-button4{
+  display:flex; align-items:center; 
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 150px;
+  height: 50px; 
+  background: #fff;
+  color: var(--bb-dark);
+  cursor:pointer;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
 .image-button:hover,
 .image-button2:hover,
-.image-button3:hover{
+.image-button3:hover,
+.image-button4:hover{
   background: #eef0f1;          
   border-color: #f0f7fb;
   box-shadow: var(--shadow-sm);
@@ -117,10 +187,12 @@ nav{
 /* Icônes des boutons nav */
 .image-button img,
 .image-button2 img,
-.image-button3 img{
+.image-button3 img,
+.image-button4 img{
   width: 32px; height: 32px;
   border-radius: 8px;
 }
+
 
 /* Texte “connecté” dans le bouton */
 .image-button p{
