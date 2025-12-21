@@ -76,7 +76,7 @@ nav{
   list-style: none; /* retire le triangle natif, on stylise */
   cursor: pointer;
   display: inline-block;
-  border: 2px solid var(--bb-dark);
+
   background: var(--bb-green);
   color: #fff;
   border-radius: 999px;
