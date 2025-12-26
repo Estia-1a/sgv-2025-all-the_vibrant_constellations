@@ -121,7 +121,7 @@ nav{
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 12px;
-  width: 150px;
+  width: 200px;
   height: 50px; 
   background: #fff;
   color: var(--bb-dark);
@@ -138,7 +138,7 @@ nav{
   border-radius: 12px;
   background: #fff;
   color: var(--bb-dark);
-  width: 150px;
+  width: 200px;
   height: 50px; 
   cursor:pointer;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
@@ -153,7 +153,7 @@ nav{
   border-radius: 12px;
   background: #fff;
   color: var(--bb-dark);
-  width: 150px;
+  width: 200px;
   height: 50px; 
   cursor:pointer;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
@@ -165,13 +165,14 @@ nav{
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 12px;
-  width: 150px;
+  width: 200px;
   height: 50px; 
   background: #fff;
   color: var(--bb-dark);
   cursor:pointer;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
+
 .image-button:hover,
 .image-button2:hover,
 .image-button3:hover,
